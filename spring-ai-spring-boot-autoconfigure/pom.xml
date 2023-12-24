@@ -132,7 +132,7 @@
 			<version>${project.parent.version}</version>
 			<optional>true</optional>
 		</dependency>
-		
+
 		<!-- Redis Vector Store-->
 		<dependency>
 			<groupId>org.springframework.ai</groupId>
@@ -140,13 +140,13 @@
 			<version>${project.parent.version}</version>
 			<optional>true</optional>
 		</dependency>
-		
+
 		<!-- Override Jedis version -->
 		<dependency>
 			<groupId>redis.clients</groupId>
 			<artifactId>jedis</artifactId>
 			<version>5.1.0</version>
-		</dependency>		
+		</dependency>
 
 		<!-- Vertex AI LLM -->
 		<dependency>
@@ -176,6 +176,14 @@
 			<optional>true</optional>
 		</dependency>
 
+		<!-- Neo4j Vector Store-->
+		<dependency>
+			<groupId>org.springframework.ai</groupId>
+			<artifactId>spring-ai-neo4j-store</artifactId>
+			<version>${project.parent.version}</version>
+			<optional>true</optional>
+		</dependency>
+
 		<!-- test dependencies -->
 
 		<dependency>
@@ -198,6 +206,7 @@
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
+			<version>${postgresql.version}</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -214,7 +223,7 @@
 			<version>${testcontainers.version}</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.redis</groupId>
 			<artifactId>testcontainers-redis</artifactId>
@@ -225,6 +234,13 @@
 		<dependency>
 			<groupId>org.awaitility</groupId>
 			<artifactId>awaitility</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.testcontainers</groupId>
+			<artifactId>neo4j</artifactId>
+			<version>${testcontainers.version}</version>
 			<scope>test</scope>
 		</dependency>
 
