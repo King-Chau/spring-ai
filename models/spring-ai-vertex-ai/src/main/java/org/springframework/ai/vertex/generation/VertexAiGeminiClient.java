@@ -113,6 +113,7 @@ public class VertexAiGeminiClient implements ChatClient {
 	 * Specifying a role is required even in singleturn use cases. Acceptable values include the following:
 	 * USER: Specifies content that's sent by you.
 	 * MODEL: Specifies the model's response.
+	 * Notice: System messages are not supported by Gemini
 	 */
 	private String toRole(Message message) {
 		return switch (message.getMessageType()) {
