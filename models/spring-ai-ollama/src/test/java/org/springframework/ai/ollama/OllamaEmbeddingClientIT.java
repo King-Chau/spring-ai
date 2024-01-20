@@ -21,7 +21,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Bean;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 @SpringBootTest
 @Disabled("For manual smoke testing only.")
@@ -54,14 +53,6 @@ class OllamaEmbeddingClientIT {
 		assertThat(embeddingResponse.getData()).hasSize(1);
 		assertThat(embeddingResponse.getData().get(0).getEmbedding()).isNotEmpty();
 		assertThat(embeddingClient.dimensions()).isEqualTo(3200);
-	}
-
-	@Test
-	void batchEmbedding() {
-		assertThatThrownBy(
-				() -> embeddingClient.embedForResponse(List.of("Hello World", "World is big and salvation is near")))
-			.isInstanceOf(IllegalArgumentException.class)
-			.hasMessageContaining("Ollama Embedding does not support batch embedding!");
 	}
 
 	@SpringBootConfiguration

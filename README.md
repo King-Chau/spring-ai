@@ -14,6 +14,20 @@ Let's make your `@Beans` intelligent!
 
 ### Breaking Changes
 
+January 13, 2024 Update
+
+The following OpenAi Autoconfiguration chat properties has changed
+
+ - from `spring.ai.openai.model` to `spring.ai.openai.chat.model`.
+ - from `spring.ai.openai.temperature` to `spring.ai.openai.chat.temperature`.
+
+Find updated documentation about the OpenAi properties: https://docs.spring.io/spring-ai/reference/api/clients/openai.html
+
+December 27, 2023 Update
+
+Merge SimplePersistentVectorStore and InMemoryVectorStore into SimpleVectorStore
+- Replace InMemoryVectorStore with SimpleVectorStore
+
 December 20, 2023 Update
 
 Refactor the Ollama client and related classes and package names
@@ -130,7 +144,7 @@ Please use the 0.7.1-SNAPSHOT if you don't want to be on the bleeding edge.
 * Azure OpenAI
 ```xml
     <dependency>
-        <groupId>org.springframework.ai</groupId>
+        <groupId>org.springframework.experimental.ai</groupId>
         <artifactId>spring-ai-azure-openai-spring-boot-starter</artifactId>
         <version>0.7.1-SNAPSHOT</version>
     </dependency>
@@ -140,7 +154,7 @@ Please use the 0.7.1-SNAPSHOT if you don't want to be on the bleeding edge.
 
 ```xml
     <dependency>
-        <groupId>org.springframework.ai</groupId>
+        <groupId>org.springframework.experimental.ai</groupId>
         <artifactId>spring-ai-openai-spring-boot-starter</artifactId>
         <version>0.7.1-SNAPSHOT</version>
     </dependency>
@@ -209,15 +223,7 @@ Following vector stores are supported:
 
 ```xml
     <dependency>
-<<<<<<< HEAD
-<<<<<<< HEAD
         <groupId>org.springframework.ai</groupId>
-=======
-        <groupId>org.springframework.ai</groupId> 
->>>>>>> 3818823 (Adds Spring boot starter for Neo4j Store)
-=======
-        <groupId>org.springframework.ai</groupId> 
->>>>>>> caed8b3 (Adds Spring boot starter for Ne04j Store)
         <artifactId>spring-ai-neo4j-store-spring-boot-starter</artifactId>
         <version>0.8.0-SNAPSHOT</version>
     </dependency>
@@ -340,7 +346,7 @@ Examples of Vector Databases include Chroma, Postgres, Pinecone, Weaviate, Mongo
 
 ## Building
 
-To build with only unit tests
+To build with running unit tests
 
 ```shell
 ./mvnw clean package
